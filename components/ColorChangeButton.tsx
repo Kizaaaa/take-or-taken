@@ -26,7 +26,7 @@ export default function ColorChangeButton({ text = "Change Color" }: ColorChange
   }
 
   const getButtonClasses = () => {
-    return `${buttonColor} text-white border-4 border-yellow-400 hover:brightness-90 transition-colors`
+    return `${buttonColor} text-white border-4 border-yellow-400`
   }
 
   return (

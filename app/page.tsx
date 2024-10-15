@@ -137,9 +137,9 @@ export default function Home() {
       </div>
       <div className="absolute mt-[80vh] ml-[50vw] z-10 flex items-end justify-end mb-[10vh] mr-[5vw]">
         <div className="flex border-2 border-[#bf4f51]">
-          <Name />
-          <Name />
-          <Name />
+          <Name variant='#6abe27'/>
+          <Name variant='#e9b70b'/>
+          <Name variant='#2236f0'/>
         </div>
       </div>
     </div>

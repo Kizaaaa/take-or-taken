@@ -5,7 +5,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
-export default function Name() {
+type NameProps = {
+  variant?: '#6abe27' | '#e9b70b' | '#2236f0'
+}
+
+export default function Name({ variant = '#6abe27' }: NameProps) {
   const [text, setText] = useState('Team name')
   const [isOpen, setIsOpen] = useState(false)
 
@@ -27,10 +31,10 @@ export default function Name() {
           stroke="red"
           strokeWidth="2"
         />
-        {/* Inner black outline and green fill */}
+        {/* Inner black outline and conditional fill */}
         <polygon 
           points="12,4 32,4 42,22 32,40 12,40 2,22"
-          fill="green"
+          fill={variant}
           stroke="black"
           strokeWidth="2"
         />
