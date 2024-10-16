@@ -31,7 +31,7 @@ export default function ColorChangeButton({ text = "Change Color" }: ColorChange
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
+      <DialogTrigger asChild className="text-white">
         <Button
           className={getButtonClasses()}
           style={{ backgroundColor: buttonColor !== "bg-[#540d0e]" ? buttonColor : undefined }}
@@ -41,7 +41,7 @@ export default function ColorChangeButton({ text = "Change Color" }: ColorChange
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Choose a color</DialogTitle>
+          <DialogTitle className="text-white">Choose a color</DialogTitle>
         </DialogHeader>
         <RadioGroup onValueChange={handleColorChange} className="grid gap-4">
           {["#6bbe27", "#2336f0", "#eab80c"].map((color, index) => (
@@ -49,10 +49,10 @@ export default function ColorChangeButton({ text = "Change Color" }: ColorChange
               <RadioGroupItem value={color} id={color} />
               <Label htmlFor={color} className="capitalize flex items-center space-x-2">
                 <div
-                  className="w-4 h-4 rounded-full"
+                  className="w-4 h-4 rounded-full text-white"
                   style={{ backgroundColor: color }}
                 ></div>
-                <span>{["Green", "Blue", "Yellow"][index]}</span>
+                <span className="text-white">{["Green", "Blue", "Yellow"][index]}</span>
               </Label>
             </div>
           ))}

@@ -24,14 +24,12 @@ export default function Name({ variant = '#6abe27' }: NameProps) {
   return (
     <div className="flex items-center space-x-4 p-4">
       <svg className="h-10 w-auto" viewBox="0 0 44 44" preserveAspectRatio="xMidYMid meet">
-        {/* Outer red outline */}
         <polygon 
           points="11,2 33,2 44,22 33,42 11,42 0,22"
           fill="none"
           stroke="red"
           strokeWidth="2"
         />
-        {/* Inner black outline and conditional fill */}
         <polygon 
           points="12,4 32,4 42,22 32,40 12,40 2,22"
           fill={variant}
@@ -41,18 +39,19 @@ export default function Name({ variant = '#6abe27' }: NameProps) {
       </svg>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <button className="text-xl hover:underline focus:outline-none">
+          <button className="text-xl text-white hover:underline focus:outline-none">
             {text}
           </button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className='bg-black'>
           <DialogHeader>
-            <DialogTitle>Edit Team Name</DialogTitle>
+            <DialogTitle className="text-white">Edit Team Name</DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input 
               name="text"
               defaultValue={text}
+              className="text-white"
             />
             <Button type="submit">Save</Button>
           </form>
